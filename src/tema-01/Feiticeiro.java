@@ -16,15 +16,122 @@ public class Feiticeiro {
 
     int atacar(Clerigo atacado, Magia magiaUtilizada) {
         int dano = magiaUtilizada.poder * ataque - atacado.defesa;
-        atacado.vida = atacado.vida - dano;
-        this.mana = mana - magiaUtilizada.custoDeMana;
+        if (this.mana < magiaUtilizada.custoDeMana) {
+            dano = 0;
+        }
+
+        if (atacado.vida < dano) {
+            atacado.vida = 0;
+        } else {
+            atacado.vida = atacado.vida - dano;
+        }
+
+        if (this.mana > magiaUtilizada.custoDeMana) {
+            this.mana = mana - magiaUtilizada.custoDeMana;
+        }
+        ;
+
         return dano;
     }
 
     int atacar(Druida atacado, Magia magiaUtilizada) {
         int dano = magiaUtilizada.poder * ataque - atacado.defesa;
-        atacado.vida = atacado.vida - dano;
-        this.mana = mana - magiaUtilizada.custoDeMana;
+        if (this.mana < magiaUtilizada.custoDeMana) {
+            dano = 0;
+        }
+
+        if (atacado.vida < dano) {
+            atacado.vida = 0;
+        } else {
+            atacado.vida = atacado.vida - dano;
+        }
+
+        if (this.mana > magiaUtilizada.custoDeMana) {
+            this.mana = mana - magiaUtilizada.custoDeMana;
+        }
+        ;
+
         return dano;
     }
+
+    int atacar(Guerreiro atacado, Magia magiaUtilizada) {
+        int dano = magiaUtilizada.poder * ataque - atacado.defesa;
+        if (this.mana < magiaUtilizada.custoDeMana) {
+            dano = 0;
+        }
+
+        if (atacado.vida < dano) {
+            atacado.vida = 0;
+        } else {
+            atacado.vida = atacado.vida - dano;
+        }
+
+        if (this.mana > magiaUtilizada.custoDeMana) {
+            this.mana = mana - magiaUtilizada.custoDeMana;
+        }
+        ;
+
+        return dano;
+    }
+
+    int atacar(Barbaro atacado, Magia magiaUtilizada) {
+        int dano = magiaUtilizada.poder * ataque - atacado.defesa;
+        if (this.mana < magiaUtilizada.custoDeMana) {
+            dano = 0;
+        }
+
+        if (atacado.vida < dano) {
+            atacado.vida = 0;
+        } else {
+            atacado.vida = atacado.vida - dano;
+        }
+
+        if (this.mana > magiaUtilizada.custoDeMana) {
+            this.mana = mana - magiaUtilizada.custoDeMana;
+        }
+        ;
+
+        return dano;
+    }
+
+    int atacar(Mago atacado, Magia magiaUtilizada) {
+        int dano = magiaUtilizada.poder * ataque - atacado.defesa;
+        if (this.mana < magiaUtilizada.custoDeMana) {
+            dano = 0;
+        }
+
+        if (atacado.vida < dano) {
+            atacado.vida = 0;
+        } else {
+            atacado.vida = atacado.vida - dano;
+        }
+
+        if (this.mana > magiaUtilizada.custoDeMana) {
+            this.mana = mana - magiaUtilizada.custoDeMana;
+        }
+        ;
+
+        return dano;
+    }
+
+    int atacar(Feiticeiro atacado, Magia magiaUtilizada) {
+        int dano = magiaUtilizada.poder * ataque - atacado.defesa;
+        if (this.mana < magiaUtilizada.custoDeMana) {
+            dano = 0;
+        }
+
+        if (atacado.vida < dano) {
+            atacado.vida = 0;
+        } else {
+            atacado.vida = atacado.vida - dano;
+        }
+        if (this.mana > magiaUtilizada.custoDeMana) {
+            this.mana = mana - magiaUtilizada.custoDeMana;
+        }
+        ;
+
+        return dano;
+    }
+
+
 }

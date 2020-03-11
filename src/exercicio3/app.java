@@ -10,7 +10,7 @@ public class app {
         System.out.println(8.5);
         System.out.println(aprovado);
         Aluno aluno1 = new Aluno ("mateus", 6.1);
-                boolean aprovado = aluno.aprovado();
+                 aprovado = aluno.aprovado();
         System.out.println("mateus");
         System.out.println(6.1);
         System.out.println(aprovado);
