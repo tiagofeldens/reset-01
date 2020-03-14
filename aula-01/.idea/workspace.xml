@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dad96f64-3222-42dc-9610-312fadf6ffea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculadora.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comparador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercicio3/Aluno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercicio3/app.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Arma.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Barbaro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Clerigo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Druida.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Feiticeiro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Guerreiro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Magia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Mago.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/PoderDivino.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercicio3/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aula01/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercicio3/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aula01/app.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,5 +155,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1584194742259" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/app.java</url>
+          <line>2</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

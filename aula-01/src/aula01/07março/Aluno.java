@@ -1,4 +1,4 @@
-package exercicio3;
+package aula01;
 
 public class Aluno {
 

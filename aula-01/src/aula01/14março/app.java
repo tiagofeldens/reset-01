@@ -1,6 +1,4 @@
-package exercicio3;
-
-import java.sql.SQLOutput;
+package aula01;
 
 public class app {
     public static void main(String[] args) {
