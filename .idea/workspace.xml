@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dad96f64-3222-42dc-9610-312fadf6ffea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculadora.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comparador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercicio3/Aluno.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercicio3/app.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Arma.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Barbaro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Clerigo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Druida.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Feiticeiro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Guerreiro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Magia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/Mago.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tema-01/PoderDivino.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +125,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="479" y="249" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1583880463419" />
+    <state x="462" y="105" key="FileChooserDialogImpl" timestamp="1584205077335">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584205077335" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1584203956850">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -162,14 +145,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584203956850" />
-    <state x="384" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1584204213725">
+    <state x="384" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1584205015338">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="384" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584204213725" />
-    <state x="65" y="0" key="new project wizard" timestamp="1584191227821">
+    <state x="384" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584205015338" />
+    <state x="65" y="0" key="new project wizard" timestamp="1584205134421">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1584191227821" />
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1584205134421" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1584194742259">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
