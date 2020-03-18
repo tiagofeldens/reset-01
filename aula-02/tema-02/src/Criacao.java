@@ -1,7 +1,11 @@
+import sun.management.snmp.jvmmib.JVM_MANAGEMENT_MIBOidTable;
+
 import java.util.Scanner;
 
-public class App {
-    public static void main(String[] args) {
+public class Criacao {
+
+    Personagem novoPersonagem (){
+
 
         Scanner in = new Scanner(System.in);
         System.out.println("Crie seu próprio Personagem!");
@@ -26,17 +30,20 @@ public class App {
 
         int fe;
         int mana;
+        Personagem personagem = null;
 
         switch (tipo) {
 
             case '1':
                 Guerreiro guerreiro = new Guerreiro(nome, vida, ataque, defesa);
                 guerreiro.imprimir();
+                personagem = guerreiro;
                 break;
 
             case '2':
                 Barbaro barbaro = new Barbaro(nome, vida, ataque, defesa);
                 barbaro.imprimir();
+                personagem = barbaro;
                 break;
 
             case '3':
@@ -44,6 +51,7 @@ public class App {
                 mana = in.nextInt();
                 Feiticeiro feiticeiro = new Feiticeiro(nome, vida, ataque, defesa, mana);
                 feiticeiro.imprimir();
+                personagem = feiticeiro;
                 break;
 
             case '4':
@@ -51,6 +59,7 @@ public class App {
                 mana = in.nextInt();
                 Mago mago = new Mago(nome, vida, ataque, defesa, mana);
                 mago.imprimir();
+                personagem = mago;
                 break;
 
             case '5':
@@ -58,6 +67,7 @@ public class App {
                 fe = in.nextInt();
                 Clerigo clerigo = new Clerigo(nome, vida, ataque, defesa, fe);
                 clerigo.imprimir();
+                personagem = clerigo;
                 break;
 
             case '6':
@@ -65,10 +75,13 @@ public class App {
                 fe = in.nextInt();
                 Druida druida = new Druida(nome, vida, ataque, defesa, fe);
                 druida.imprimir();
+                personagem = druida;
                 break;
 
 
         }
+
+        return personagem;
 
     }
 }

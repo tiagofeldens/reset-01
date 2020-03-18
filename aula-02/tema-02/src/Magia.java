@@ -7,5 +7,6 @@ public class Magia {
         this.nome = nome;
         this.poder = poder;
         this.custoDeMana = custoDeMana;
+
     }
 }

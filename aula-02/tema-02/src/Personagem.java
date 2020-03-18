@@ -1,12 +1,12 @@
 public class Personagem {
 
-    String nome;
+    final String nome;
 
     double vida;
 
-    double ataque;
+    final double ataque;
 
-    double defesa;
+    final double defesa;
 
     public Personagem(String nome, double vida, double ataque, double defesa) {
         this.nome = nome;
