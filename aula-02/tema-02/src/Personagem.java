@@ -1,3 +1,7 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 public class Personagem {
 
     final String nome;
@@ -21,5 +25,15 @@ public class Personagem {
 
     }
 
+    void atacar(Personagem atacado, List<String> registros, Poder poder){
+
+    }
+
+    String dataHora (){
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss:ssss"));
+    }
+
+    void imprimirStatus(){
+    }
 
 }

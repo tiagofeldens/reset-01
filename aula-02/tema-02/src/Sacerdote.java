@@ -13,11 +13,11 @@ public class Sacerdote extends Personagem {
             double dano = calcularDano(poderDivinoUtilizado.intensidade, atacado.defesa);
             atacado.vida = atacado.vida - dano;
             this.fe= fe - poderDivinoUtilizado.custoDeFe;
-            String registro = this.nome + " atacou " + atacado.nome + " com o " + poderDivinoUtilizado.nome + " causando dano de " + dano;
+            String registro = dataHora() + this.nome + " atacou " + atacado.nome + " com o " + poderDivinoUtilizado.nome + " causando dano de " + dano;
             registros.add(registro);
 
             if (atacado.vida == 0) {
-                registro = atacado.nome + " morreu!";
+                registro = dataHora() + atacado.nome + " morreu!";
                 registros.add(registro);
             }
         }
@@ -33,5 +33,10 @@ public class Sacerdote extends Personagem {
     }
     void imprimir() {
         System.out.println("Nome: " + this.nome + " Vida: " + this.vida + " Ataque: " + this.ataque + " Defesa: " + this.defesa + " Fé: " + this.fe);
+    }
+
+    @Override
+    void imprimirStatus() {
+        System.out.println(this.nome + " ficou com " + this.vida + " de vida e com " + this.fe + " de Fé");
     }
 }

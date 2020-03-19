@@ -13,15 +13,16 @@ public class Arcano extends Personagem {
             double dano = calcularDano(magiaUtilizada.poder, atacado.defesa);
             atacado.vida = atacado.vida - dano;
             this.mana = mana - magiaUtilizada.custoDeMana;
-            String registro = this.nome + " atacou " + atacado.nome + " com o " + magiaUtilizada.nome + " causando dano de " + dano;
+            String registro = dataHora() + this.nome + " atacou " + atacado.nome + " com o " + magiaUtilizada.nome + " causando dano de " + dano;
             registros.add(registro);
 
             if (atacado.vida == 0) {
-                registro = atacado.nome + " morreu!";
+                registro = dataHora() + atacado.nome + " morreu!";
                 registros.add(registro);
             }
         }
     }
+    
     void atacar (Personagem atacado, MagiaIndividual magiaIndividual, List<String> registros){
         this.atacar(atacado, magiaIndividual, registros);
     }
@@ -34,6 +35,11 @@ public class Arcano extends Personagem {
 
     void imprimir() {
         System.out.println("Nome: " + this.nome + " Vida: " + this.vida + " Ataque: " + this.ataque + " Defesa: " + this.defesa + " Mana: " + this.mana);
+    }
+
+    @Override
+    void imprimirStatus() {
+        System.out.println(this.nome + " ficou com " + this.vida + " de vida e com " + this.mana + " de mana");
     }
 }
 

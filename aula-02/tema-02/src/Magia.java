@@ -1,12 +1,11 @@
-public class Magia {
-    String nome;
+public class Magia extends Poder{
     int poder;
     int custoDeMana;
 
     public Magia(String nome, int poder, int custoDeMana) {
-        this.nome = nome;
+        super(nome);
         this.poder = poder;
         this.custoDeMana = custoDeMana;
-
     }
+
 }

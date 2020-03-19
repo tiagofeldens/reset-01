@@ -1,10 +1,10 @@
-public class PoderDivino {
-    String nome;
+public class PoderDivino extends  Poder{
     int intensidade;
     int custoDeFe;
 
+
     public PoderDivino(String nome, int intensidade, int custoDeFe) {
-        this.nome = nome;
+        super(nome);
         this.intensidade = intensidade;
         this.custoDeFe = custoDeFe;
     }
