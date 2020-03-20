@@ -6,7 +6,7 @@ public class Personagem {
 
     final String nome;
 
-    double vida;
+    private double vida;
 
     final double ataque;
 
@@ -30,7 +30,7 @@ public class Personagem {
     }
 
     String dataHora (){
-        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss:ssss"));
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss.SSSS"));
     }
 
     void imprimirStatus(){

@@ -25,6 +25,15 @@ public class App {
             }
         } else {
             System.out.println(ramza.nome + " tentou atacar " + ragnar.nome + " mas está morto.");
+            if (floki.vida > 0) {
+                int dano = floki.atacar(rollo, cogumeloSonifero);
+                System.out.println(floki.nome + " atacou " + rollo.nome + " com o " + cogumeloSonifero.nome + " causando dano de " + dano);
+                if (rollo.vida == 0) {
+                    System.out.println(rollo.nome + " morreu!");
+                }
+            } else {
+                System.out.println(floki.nome + " tentou atacar " + rollo.nome + " mas está morto.");
+            }
         }
 
         //segundo ataque
@@ -62,15 +71,6 @@ public class App {
         }
 
         //quinto ataque
-        if (floki.vida > 0) {
-            int dano = floki.atacar(rollo, cogumeloSonifero);
-            System.out.println(floki.nome + " atacou " + rollo.nome + " com o " + cogumeloSonifero.nome + " causando dano de " + dano);
-            if (rollo.vida == 0) {
-                System.out.println(rollo.nome + " morreu!");
-            }
-        } else {
-            System.out.println(floki.nome + " tentou atacar " + rollo.nome + " mas está morto.");
-        }
 
         //sexto ataque
         if (floki.vida > 0) {

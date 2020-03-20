@@ -14,7 +14,7 @@ public class HomemDeArma extends Personagem {
         if (this.vida > 0) {
             double dano = calcularDano(arma.poderDeAtaque, atacado.defesa);
             atacado.vida = atacado.vida - dano;
-            String registro = dataHora() + this.nome + " atacou " + atacado.nome + " com o " + arma.nome + " causando dano de " + dano;
+            String registro = dataHora() + " " + this.nome + " atacou " + atacado.nome + " com o " + arma.nome + " causando dano de " + dano;
             registros.add(registro);
 
             if (atacado.vida == 0) {

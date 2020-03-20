@@ -1,11 +1,9 @@
-import sun.management.snmp.jvmmib.JVM_MANAGEMENT_MIBOidTable;
-
+import java.util.List;
 import java.util.Scanner;
 
 public class Criacao {
 
-    Personagem novoPersonagem (){
-
+    void novoPersonagem(List<HomemDeArma> homensDeArma, List<Arcano> arcanos, List<Sacerdote> sacerdotes) {
 
         Scanner in = new Scanner(System.in);
         System.out.println("Crie seu próprio Personagem!");
@@ -30,20 +28,19 @@ public class Criacao {
 
         int fe;
         int mana;
-        Personagem personagem = null;
 
         switch (tipo) {
 
             case '1':
                 Guerreiro guerreiro = new Guerreiro(nome, vida, ataque, defesa);
                 guerreiro.imprimir();
-                personagem = guerreiro;
+                homensDeArma.add(guerreiro);
                 break;
 
             case '2':
                 Barbaro barbaro = new Barbaro(nome, vida, ataque, defesa);
                 barbaro.imprimir();
-                personagem = barbaro;
+                homensDeArma.add(barbaro);
                 break;
 
             case '3':
@@ -51,7 +48,7 @@ public class Criacao {
                 mana = in.nextInt();
                 Feiticeiro feiticeiro = new Feiticeiro(nome, vida, ataque, defesa, mana);
                 feiticeiro.imprimir();
-                personagem = feiticeiro;
+                arcanos.add(feiticeiro);
                 break;
 
             case '4':
@@ -59,7 +56,7 @@ public class Criacao {
                 mana = in.nextInt();
                 Mago mago = new Mago(nome, vida, ataque, defesa, mana);
                 mago.imprimir();
-                personagem = mago;
+                arcanos.add(mago);
                 break;
 
             case '5':
@@ -67,7 +64,7 @@ public class Criacao {
                 fe = in.nextInt();
                 Clerigo clerigo = new Clerigo(nome, vida, ataque, defesa, fe);
                 clerigo.imprimir();
-                personagem = clerigo;
+                sacerdotes.add(clerigo);
                 break;
 
             case '6':
@@ -75,13 +72,8 @@ public class Criacao {
                 fe = in.nextInt();
                 Druida druida = new Druida(nome, vida, ataque, defesa, fe);
                 druida.imprimir();
-                personagem = druida;
+                sacerdotes.add(druida);
                 break;
-
-
         }
-
-        return personagem;
-
     }
 }

@@ -8,12 +8,15 @@ public class Sacerdote extends Personagem {
         this.fe = fe;
     }
 
-    private void atacar(Personagem atacado, PoderDivino poderDivinoUtilizado, List<String> registros) {
+    private void atacarPrivado(Personagem atacado, PoderDivino poderDivinoUtilizado, List<String> registros, boolean ataqueEmArea) {
         if (this.vida > 0 && this.fe > poderDivinoUtilizado.custoDeFe) {
             double dano = calcularDano(poderDivinoUtilizado.intensidade, atacado.defesa);
             atacado.vida = atacado.vida - dano;
             this.fe= fe - poderDivinoUtilizado.custoDeFe;
-            String registro = dataHora() + this.nome + " atacou " + atacado.nome + " com o " + poderDivinoUtilizado.nome + " causando dano de " + dano;
+            String registro = dataHora() + " " + this.nome + " atacou " + atacado.nome + " com o " + poderDivinoUtilizado.nome + " causando dano de " + dano;
+            if (ataqueEmArea) {
+                registro = registro + "O ataque foi em área.";
+            }
             registros.add(registro);
 
             if (atacado.vida == 0) {
@@ -23,12 +26,12 @@ public class Sacerdote extends Personagem {
         }
     }
     void atacar (Personagem atacado, PoderDivinoIndividual poderIndividual, List<String> registros){
-        this.atacar(atacado, poderIndividual, registros);
+        this.atacarPrivado(atacado, poderIndividual, registros, false);
     }
 
     void atacar (List<Personagem> personagensAtacados, PoderDivinoEmArea poderEmArea, List<String> registros){
         for (Personagem atacado : personagensAtacados){
-            this.atacar(atacado, poderEmArea, registros);
+            this.atacarPrivado(atacado, poderEmArea, registros, true);
         }
     }
     void imprimir() {

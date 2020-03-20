@@ -8,12 +8,15 @@ public class Arcano extends Personagem {
         this.mana = mana;
     }
 
-    private void atacar(Personagem atacado, Magia magiaUtilizada, List<String> registros) {
+    private void atacarPrivado (Personagem atacado, Magia magiaUtilizada, List<String> registros, boolean ataqueEmArea) {
         if (this.vida > 0 && this.mana > magiaUtilizada.custoDeMana) {
             double dano = calcularDano(magiaUtilizada.poder, atacado.defesa);
             atacado.vida = atacado.vida - dano;
             this.mana = mana - magiaUtilizada.custoDeMana;
-            String registro = dataHora() + this.nome + " atacou " + atacado.nome + " com o " + magiaUtilizada.nome + " causando dano de " + dano;
+            String registro = dataHora() + " " + this.nome + " atacou " + atacado.nome + " com o " + magiaUtilizada.nome + " causando dano de " + dano + ". ";
+            if (ataqueEmArea) {
+                registro = registro + "O ataque foi em área.";
+            }
             registros.add(registro);
 
             if (atacado.vida == 0) {
@@ -22,14 +25,14 @@ public class Arcano extends Personagem {
             }
         }
     }
-    
+
     void atacar (Personagem atacado, MagiaIndividual magiaIndividual, List<String> registros){
-        this.atacar(atacado, magiaIndividual, registros);
+        this.atacarPrivado(atacado, magiaIndividual, registros, false);
     }
 
     void atacar (List<Personagem> personagensAtacados, MagiaEmArea magiaEmArea, List<String> registros){
         for (Personagem atacado : personagensAtacados){
-            this.atacar(atacado, magiaEmArea, registros);
+            this.atacarPrivado(atacado, magiaEmArea, registros, true);
         }
     }
 
