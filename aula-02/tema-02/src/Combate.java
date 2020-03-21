@@ -19,6 +19,7 @@ public class Combate {
         List<HomemDeArma> homensDeArma = new ArrayList<>();
         List<Arcano> arcanos = new ArrayList<>();
         List<Sacerdote> sacerdotes = new ArrayList<>();
+        ;
 
         int contadorDePersonagens = 0;
         while (contadorDePersonagens < 6) {
@@ -39,7 +40,7 @@ public class Combate {
         alvosGuerreiros.add(personagem1);
         alvosGuerreiros.add(personagem2);
 
-        List<Personagem>alvosArcanos = new ArrayList<>();
+        List<Personagem> alvosArcanos = new ArrayList<>();
         alvosArcanos.add(personagem3);
         alvosArcanos.add(personagem4);
 
@@ -55,6 +56,7 @@ public class Combate {
         //combate
         LocalDateTime horaInicial = LocalDateTime.now();
 
+        //não copnsegui fazer com que o usuário não fosse origado a criar um personagem de cada tipo.
         personagem1.equipar(machado);
         personagem1.atacar(personagem2, registros, null);
         personagem3.atacar(personagem5, bolaDeFogo, registros);

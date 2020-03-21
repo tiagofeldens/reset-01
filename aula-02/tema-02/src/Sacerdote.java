@@ -4,22 +4,22 @@ public class Sacerdote extends Personagem {
     int fe;
 
     protected Sacerdote(String nome, double vida, double ataque, double defesa, int fe) {
-        super(nome, vida, ataque, defesa);
+        super(nome, vida, ataque, defesa, TipoDePersonagem.SACERDOTE);
         this.fe = fe;
     }
 
     private void atacarPrivado(Personagem atacado, PoderDivino poderDivinoUtilizado, List<String> registros, boolean ataqueEmArea) {
-        if (this.vida > 0 && this.fe > poderDivinoUtilizado.custoDeFe) {
-            double dano = calcularDano(poderDivinoUtilizado.intensidade, atacado.defesa);
-            atacado.vida = atacado.vida - dano;
-            this.fe= fe - poderDivinoUtilizado.custoDeFe;
-            String registro = dataHora() + " " + this.nome + " atacou " + atacado.nome + " com o " + poderDivinoUtilizado.nome + " causando dano de " + dano;
+        if (this.getVida()> 0 && this.fe > poderDivinoUtilizado.custo) {
+            double dano = calcularDano(poderDivinoUtilizado.forca, atacado.defesa);
+            atacado.setVida(atacado.getVida() - dano);
+            this.fe= fe - poderDivinoUtilizado.custo;
+            String registro = dataHora() + " " + this.nome + " atacou " + atacado.nome + " com o " + poderDivinoUtilizado.nome + " causando dano de " + dano + ". ";
             if (ataqueEmArea) {
                 registro = registro + "O ataque foi em área.";
             }
             registros.add(registro);
 
-            if (atacado.vida == 0) {
+            if (atacado.getVida() == 0) {
                 registro = dataHora() + atacado.nome + " morreu!";
                 registros.add(registro);
             }
@@ -35,11 +35,11 @@ public class Sacerdote extends Personagem {
         }
     }
     void imprimir() {
-        System.out.println("Nome: " + this.nome + " Vida: " + this.vida + " Ataque: " + this.ataque + " Defesa: " + this.defesa + " Fé: " + this.fe);
+        System.out.println("Nome: " + this.nome + " Vida: " + this.getVida() + " Ataque: " + this.ataque + " Defesa: " + this.defesa + " Fé: " + this.fe);
     }
 
     @Override
     void imprimirStatus() {
-        System.out.println(this.nome + " ficou com " + this.vida + " de vida e com " + this.fe + " de Fé");
+        System.out.println(this.nome + " ficou com " + this.getVida() + " de vida e com " + this.fe + " de Fé");
     }
 }

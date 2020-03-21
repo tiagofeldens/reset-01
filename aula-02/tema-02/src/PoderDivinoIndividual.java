@@ -1,5 +1,6 @@
 public class PoderDivinoIndividual extends PoderDivino {
-    public PoderDivinoIndividual(String nome, int intensidade, int custoDeFe) {
-        super(nome, intensidade, custoDeFe);
+
+    public PoderDivinoIndividual(String nome, int forca, int custo) {
+        super(nome, forca, custo);
     }
 }
