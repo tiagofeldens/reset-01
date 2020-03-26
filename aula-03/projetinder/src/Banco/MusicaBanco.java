@@ -37,11 +37,12 @@ public class MusicaBanco {
         return null;
     }
 
-    public void deletar(int id) {
+    public boolean deletar(int id) {
         Musica musicaParaDeletar = procurar(id);
         if (musicaParaDeletar != null) {
-            musicas.remove(musicaParaDeletar);
+            return musicas.remove(musicaParaDeletar);
         }
+        return false;
 
 
     }

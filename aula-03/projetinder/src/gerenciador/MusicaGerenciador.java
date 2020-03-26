@@ -47,6 +47,13 @@ public class MusicaGerenciador {
         }
         }
 
+    public boolean deletar(int id) {
+        if (id > 0) {
+            return banco.deletar(id);
+        }
+        return false;
+    }
+
     }
 
 
