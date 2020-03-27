@@ -124,7 +124,7 @@ public class MusicaMenu {
 
         System.out.print("-> ");
         int id = scanner.nextInt();
-        scanner.nextLine();
+
 
         System.out.print("Nome: ");
         String nome = scanner.nextLine();

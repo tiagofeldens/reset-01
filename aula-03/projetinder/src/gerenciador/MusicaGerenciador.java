@@ -10,13 +10,17 @@ public class MusicaGerenciador {
 
     private MusicaBanco banco = new MusicaBanco();
 
-    public Musica salvar (Musica musica){
+    public Musica salvar(Musica musica) {
         List<Musica> musicas = banco.listar();
 
-        for (Musica musicaExistente : musicas){
-            if (musica.nome.equals(musicaExistente.nome)){
-                return musicaExistente;
+        if (musica.nome.isEmpty() || musica.autor.isEmpty() || musica.estilo == null || musica.dataLancamento == null) {
+            System.out.println("Campos obrigatórios não foram preenchidos.");
+            return null;
+        }
 
+        for (Musica musicaExistente : musicas) {
+            if (musica.nome.equals(musicaExistente.nome)) {
+                return musicaExistente;
             }
         }
         if (musica.dataLancamento.isAfter(LocalDate.now())) {
@@ -26,26 +30,37 @@ public class MusicaGerenciador {
         return banco.salvar(musica);
     }
 
-    public List<Musica> listar () {
+    public List<Musica> listar() {
         return banco.listar();
     }
 
-    public Musica procurar (int id){
-        if (id>0) {
+    public Musica procurar(int id) {
+        if (id > 0) {
             return banco.procurar(id);
         }
         return null;
-        }
+    }
 
-    public Musica editar (int id, Musica musicaAtualizada){
+    public Musica editar(int id, Musica musicaAtualizada) {
+        List<Musica> musicas = banco.listar();
         Musica musicaExistente = procurar(id);
         if (musicaExistente == null) {
             return null;
         }
-        else {
-            return banco.editar(musicaAtualizada, musicaAtualizada);
+
+        if (musicaAtualizada.nome.isEmpty() || musicaAtualizada.autor.isEmpty() || musicaAtualizada.estilo == null || musicaAtualizada.dataLancamento == null) {
+            System.out.println("Campos obrigatórios não foram preenchidos.");
+            return null;
+        } else {
+            for (Musica musica : musicas) {
+                if (musicaAtualizada.nome.equals(musica.nome) && musicaAtualizada.id != musica.id) {
+                    return musicaExistente;
+                }
+            }
+            return banco.editar(musicaExistente, musicaAtualizada);
+
         }
-        }
+    }
 
     public boolean deletar(int id) {
         if (id > 0) {
@@ -54,6 +69,6 @@ public class MusicaGerenciador {
         return false;
     }
 
-    }
+}
 
 

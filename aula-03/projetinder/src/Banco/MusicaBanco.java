@@ -20,7 +20,7 @@ public class MusicaBanco {
         musicaExistente.nome = musicaEditada.nome;
         musicaExistente.autor = musicaEditada.autor;
         musicaExistente.dataLancamento = musicaEditada.dataLancamento;
-        musicaExistente.estilo = musicaExistente.estilo;
+        musicaExistente.estilo = musicaEditada.estilo;
         return musicaExistente;
     }
 

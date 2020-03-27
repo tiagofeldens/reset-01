@@ -7,6 +7,7 @@ public class app {
 
     public static void main(String[] args) {
 
+        UsuarioMenu usuarioMenu = new UsuarioMenu();
         MusicaMenu musicaMenu = new MusicaMenu();
 
         Scanner scanner = new Scanner(System.in);
@@ -15,12 +16,17 @@ public class app {
         while (opcao != 'X') {
 
             System.out.println("\nSelecione uma opção");
-            System.out.println("[ M ] Músicas");
-            System.out.println("[ X ] Encerrar");
+            System.out.println("[ U ] - Usuário");
+            System.out.println("[ M ] - Músicas");
+            System.out.println("[ X ] - Encerrar");
             System.out.print("-> ");
             opcao = scanner.next().charAt(0);
 
             switch (opcao) {
+                case 'U':
+                    usuarioMenu.opcoes();
+                    break;
+
                 case 'M':
                     musicaMenu.opcoes();
                     break;
