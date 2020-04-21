@@ -12,6 +12,7 @@ public class CuriosidadeGerenciador {
 
     public CuriosidadeBanco banco = new CuriosidadeBanco();
 
+
     public Curiosidade salvar(Curiosidade curiosidade) {
         List<Curiosidade> curiosidades = banco.listar();
 
@@ -66,4 +67,5 @@ public class CuriosidadeGerenciador {
         }
         return false;
     }
+
 }

@@ -75,9 +75,9 @@ public class SerieMenu {
         System.out.print("Dia de Lançamnto: ");
         int dia = scanner.nextInt();
         System.out.print("Numero de Temporadas: ");
-        Double numeroDeTemporadas = scanner.nextDouble();
+        int numeroDeTemporadas = scanner.nextInt();
         System.out.print("Numero de Episódios: ");
-        Double numeroDeEpisodios = scanner.nextDouble();
+        int numeroDeEpisodios = scanner.nextInt();
 
 
         System.out.println("Categoria:");
@@ -147,9 +147,9 @@ public class SerieMenu {
         System.out.print("Dia de Lançamnto: ");
         int dia = scanner.nextInt();
         System.out.print("Numero de Temporadas: ");
-        Double numeroDeTemporadas = scanner.nextDouble();
+        int numeroDeTemporadas = scanner.nextInt();
         System.out.print("Numero de Episódios: ");
-        Double numeroDeEpisodios = scanner.nextDouble();
+        int numeroDeEpisodios = scanner.nextInt();
 
 
         System.out.println("Categoria:");

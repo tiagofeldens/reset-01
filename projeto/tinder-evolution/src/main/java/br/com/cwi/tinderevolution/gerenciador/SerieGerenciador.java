@@ -14,7 +14,7 @@ public class SerieGerenciador {
     public Serie salvar(Serie serie) {
         List<Serie> series = banco.listar();
 
-        if (serie.nome.isEmpty() || serie.diretor.isEmpty()|| serie.numeroDeEpisodios == null || serie.numeroDeTemporadas == null || serie.dataLancamento == null || serie.categoria == null || serie.sinopse.isEmpty()) {
+        if (serie.nome.isEmpty() || serie.diretor.isEmpty()|| serie.numeroDeEpisodios == 0 || serie.numeroDeTemporadas == 0 || serie.dataLancamento == null || serie.categoria == null || serie.sinopse.isEmpty()) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         }
@@ -49,7 +49,7 @@ public class SerieGerenciador {
             return null;
         }
 
-        if (serieAtualizada.nome.isEmpty() || serieAtualizada.diretor.isEmpty()|| serieAtualizada.numeroDeEpisodios == null || serieAtualizada.numeroDeTemporadas == null || serieAtualizada.dataLancamento == null || serieAtualizada.categoria == null || serieAtualizada.sinopse.isEmpty()) {
+        if (serieAtualizada.nome.isEmpty() || serieAtualizada.diretor.isEmpty()|| serieAtualizada.numeroDeEpisodios == 0 || serieAtualizada.numeroDeTemporadas == 0 || serieAtualizada.dataLancamento == null || serieAtualizada.categoria == null || serieAtualizada.sinopse.isEmpty()) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         } else {

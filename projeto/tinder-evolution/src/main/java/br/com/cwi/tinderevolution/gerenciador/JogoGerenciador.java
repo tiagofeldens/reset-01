@@ -16,13 +16,13 @@ public class JogoGerenciador {
     public Jogo salvar(Jogo jogo) {
         List<Jogo> jogos = banco.listar();
 
-        if (jogo.nome.isEmpty() || jogo.publisher.isEmpty() || jogo.categoria == null || jogo.dataLancamento == null || jogo.plataforma == null) {
+        if (jogo.nome.isEmpty() || jogo.categoria == null || jogo.dataLancamento == null || jogo.plataforma == null) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         }
 
         for (Jogo jogoExistente : jogos) {
-            if (jogo.nome.equals(jogoExistente.nome)) {
+            if (jogo.nome.equals(jogoExistente.nome) && jogo.plataforma.equals(jogoExistente.plataforma)) {
                 return jogoExistente;
             }
         }
@@ -56,7 +56,7 @@ public class JogoGerenciador {
             return null;
         } else {
             for (Jogo jogo : jogos) {
-                if (jogoAtualizado.nome.equals(jogo.nome) && jogoAtualizado.id != jogo.id) {
+                if (jogoAtualizado.nome.equals(jogo.nome) && jogoAtualizado.plataforma.equals(jogo.plataforma) && jogoAtualizado.id != jogo.id) {
                     return jogoExistente;
                 }
             }

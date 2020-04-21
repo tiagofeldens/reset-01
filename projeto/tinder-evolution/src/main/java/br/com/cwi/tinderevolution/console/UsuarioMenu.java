@@ -3,6 +3,7 @@ package br.com.cwi.tinderevolution.console;
 import br.com.cwi.tinderevolution.dominio.Usuario;
 import br.com.cwi.tinderevolution.gerenciador.UsuarioGerenciador;
 
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
@@ -79,8 +80,10 @@ public class UsuarioMenu {
         double latitude = scanner.nextDouble();
         System.out.print("Longitude: ");
         double longitude = scanner.nextDouble();
+        System.out.print("Foto: ");
+        String foto = scanner.nextLine();
 
-        Usuario usuario = new Usuario(nome, email, telefone, LocalDate.of(ano, mes, dia), bio, latitude, longitude);
+        Usuario usuario = new Usuario(nome, email, telefone, LocalDate.of(ano, mes, dia), bio, latitude, longitude, foto);
         return gerenciador.salvar(usuario);
 
     }
@@ -117,9 +120,11 @@ public class UsuarioMenu {
         double latitude = scanner.nextDouble();
         System.out.print("Longitude: ");
         double longitude = scanner.nextDouble();
+        System.out.print("Foto: ");
+        String foto = scanner.nextLine();
 
 
-        Usuario atualizacao = new Usuario(nome, email, telefone, LocalDate.of(ano, mes, dia), bio, latitude, longitude);
+        Usuario atualizacao = new Usuario(nome, email, telefone, LocalDate.of(ano, mes, dia), bio, latitude, longitude, foto);
 
         Usuario usuarioAtualizado = gerenciador.editar(id, atualizacao);
 
