@@ -21,21 +21,21 @@ public class UsuarioGerenciador {
     private CuriosidadeGerenciador curiosidadeGerenciador = new CuriosidadeGerenciador();
 
 
-    public Usuario salvar (Usuario usuario){
+    public Usuario salvar(Usuario usuario) {
         List<Usuario> usuarios = banco.listar();
 
-        if (usuario.nome.isEmpty() || usuario.email.isEmpty() || usuario.telefone.isEmpty() || usuario.longitude == null|| usuario.latitude == null || usuario.bio.isEmpty()|| usuario.dataNascimento == null){
+        if (usuario.getNome().isEmpty() || usuario.getEmail().isEmpty() || usuario.getTelefone().isEmpty() || usuario.getLongitude() == null || usuario.getLatitude() == null || usuario.getBio().isEmpty() || usuario.getDataNascimento() == null) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         }
 
-        for (Usuario usuarioExistente : usuarios){
-            if (usuario.email.equals(usuarioExistente.email)){
+        for (Usuario usuarioExistente : usuarios) {
+            if (usuario.getEmail().equals(usuarioExistente.getEmail())) {
                 return usuarioExistente;
 
             }
         }
-        if (calcularIdade(usuario.dataNascimento) <18) {
+        if (calcularIdade(usuario.getDataNascimento()) < 18) {
             System.out.println("Usuário deve ter idade igual ou superior a 18 anos.");
             return null;
         }
@@ -43,31 +43,30 @@ public class UsuarioGerenciador {
         return banco.salvar(usuario);
     }
 
-    public List<Usuario> listar () {
+    public List<Usuario> listar() {
         return banco.listar();
     }
 
-    public Usuario procurar (int id){
-        if (id>0) {
+    public Usuario procurar(int id) {
+        if (id > 0) {
             return banco.procurar(id);
         }
         return null;
     }
 
-    public Usuario editar (int id, Usuario usuarioEditado){
+    public Usuario editar(int id, Usuario usuarioEditado) {
         List<Usuario> usuarios = banco.listar();
         Usuario usuarioExistente = procurar(id);
         if (usuarioExistente == null) {
             return null;
         }
 
-        if (usuarioEditado.nome.isEmpty() || usuarioEditado.email.isEmpty() || usuarioEditado.telefone.isEmpty() ||usuarioEditado.longitude == null|| usuarioEditado.latitude == null || usuarioEditado.bio.isEmpty() || usuarioEditado.dataNascimento == null){
+        if (usuarioEditado.getNome().isEmpty() || usuarioEditado.getEmail().isEmpty() || usuarioEditado.getTelefone().isEmpty() || usuarioEditado.getLongitude() == null || usuarioEditado.getLatitude() == null || usuarioEditado.getBio().isEmpty() || usuarioEditado.getDataNascimento() == null) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
-        }
-        else {
-            for (Usuario usuario : usuarios){
-                if (usuarioEditado.email.equals(usuario.email) && usuarioEditado.id != usuario.id){
+        } else {
+            for (Usuario usuario : usuarios) {
+                if (usuarioEditado.getEmail().equals(usuario.getEmail()) && usuarioEditado.getId() != usuario.getId()) {
                     return usuarioExistente;
                 }
             }
@@ -82,7 +81,7 @@ public class UsuarioGerenciador {
         return false;
     }
 
-    private double calcularIdade (LocalDate dataNascimento){
+    private double calcularIdade(LocalDate dataNascimento) {
         Period anos = Period.between(dataNascimento, LocalDate.now());
         double idade = anos.getYears();
         return idade;
@@ -91,98 +90,122 @@ public class UsuarioGerenciador {
     }
 
 
-    public void curtirMusica (int id, int idMusica){
+    public void curtirMusica(int id, int idMusica) {
         Usuario usuario = procurar(id);
-        Musica musica = musicaGerenciador.procurar(idMusica);
-        usuario.musicasCurtidas.add(musica);
+        usuario.musicasCurtidas.add(idMusica);
     }
 
-    public void descurtirMusica (int id, int idMusica){
+    public void descurtirMusica(int id, int idMusica) {
         Usuario usuario = procurar(id);
-        Musica musica = musicaGerenciador.procurar(idMusica);
-        usuario.musicasCurtidas.remove(musica);
+        usuario.musicasCurtidas.removeIf(i -> i == idMusica);
     }
 
-    public void curtirFilme (int id, int idFilme){
+    public void curtirFilme(int id, int idFilme) {
         Usuario usuario = procurar(id);
-        Filme filme = filmeGerenciador.procurar(idFilme);
-        usuario.filmesCurtidos.add(filme);
+        usuario.filmesCurtidos.add(idFilme);
     }
 
-    public void descurtirFilme (int id, int idFilme){
+    public void descurtirFilme(int id, int idFilme) {
         Usuario usuario = procurar(id);
-        Filme filme = filmeGerenciador.procurar(idFilme);
-        usuario.filmesCurtidos.remove(filme);
+        usuario.filmesCurtidos.removeIf(i -> i == idFilme);
     }
 
-    public void curtirSerie (int id, int idSerie){
+    public void curtirSerie(int id, int idSerie) {
         Usuario usuario = procurar(id);
-        Serie serie = serieGerenciador.procurar(idSerie);
-        usuario.seriesCurtidas.add(serie);
+        usuario.seriesCurtidas.add(idSerie);
     }
 
-    public void descurtirSerie (int id, int idSerie){
+    public void descurtirSerie(int id, int idSerie) {
         Usuario usuario = procurar(id);
-        Serie serie = serieGerenciador.procurar(idSerie);
-        usuario.seriesCurtidas.remove(serie);
+        usuario.seriesCurtidas.removeIf(i -> i == idSerie);
     }
 
-    public void curtirJogo (int id, int idJogo){
+    public void curtirJogo(int id, int idJogo) {
         Usuario usuario = procurar(id);
-        Jogo jogo = jogoGerenciador.procurar(idJogo);
-        usuario.jogosCurtidos.add(jogo);
+        usuario.jogosCurtidos.add(idJogo);
     }
 
-    public void descurtirJogo (int id, int idJogo){
+    public void descurtirJogo(int id, int idJogo) {
         Usuario usuario = procurar(id);
-        Jogo jogo = jogoGerenciador.procurar(idJogo);
-        usuario.jogosCurtidos.remove(jogo);
+        usuario.jogosCurtidos.removeIf(i -> i == idJogo);
     }
 
-    public void curtirEsporte (int id, int idEsporte){
+    public void curtirEsporte(int id, int idEsporte) {
         Usuario usuario = procurar(id);
-        Esporte esporte = esporteGerenciador.procurar(idEsporte);
-        usuario.esportesCurtidos.add(esporte);
+        usuario.esportesCurtidos.add(idEsporte);
     }
 
-    public void descurtirEsporte (int id, int idEsporte){
+    public void descurtirEsporte(int id, int idEsporte) {
         Usuario usuario = procurar(id);
-        Esporte esporte = esporteGerenciador.procurar(idEsporte);
-        usuario.esportesCurtidos.remove(esporte);
+        usuario.esportesCurtidos.removeIf(i -> i == idEsporte);
     }
 
-    // public void definirCuriosidade
+    public void definirCuriosidade(int id, Curiosidade novaCuriosidade) {
+        Usuario usuario = procurar(id);
+        Curiosidade curiosidade = curiosidadeGerenciador.salvar(novaCuriosidade);
+        usuario.curiosidades.add(curiosidade);
+    }
 
-    public List<Musica> listarMusicasCurtidas (int id){
+    public List<Integer> listarMusicasCurtidas(int id) {
         Usuario usuario = procurar(id);
         return usuario.musicasCurtidas;
     }
 
-    public List<Filme> listarFilmesCurtidos (int id){
+    public List<Integer> listarFilmesCurtidos(int id) {
         Usuario usuario = procurar(id);
         return usuario.filmesCurtidos;
     }
 
-    public List<Serie>  listarSeriesCurtidas (int id){
+    public List<Integer> listarSeriesCurtidas(int id) {
         Usuario usuario = procurar(id);
         return usuario.seriesCurtidas;
     }
 
-    public List<Jogo> listarJogosCurtidos (int id){
+    public List<Integer> listarJogosCurtidos(int id) {
         Usuario usuario = procurar(id);
         return usuario.jogosCurtidos;
     }
 
-    public List<Esporte> listarEsportesCurtidos (int id){
+    public List<Integer> listarEsportesCurtidos(int id) {
         Usuario usuario = procurar(id);
         return usuario.esportesCurtidos;
     }
 
-    public List<Curiosidade> listarCuriosidades (int id){
+    public List<Curiosidade> listarCuriosidades(int id) {
         Usuario usuario = procurar(id);
         return usuario.curiosidades;
     }
 
+
+    //MATCH
+
+    public void curtirUsuario(int id, int idUsuarioCurtido) {
+        Usuario usuario = procurar(id);
+        Usuario usuarioCurtido = this.procurar(idUsuarioCurtido);
+        usuario.usuariosCurtidos.add(usuarioCurtido.getId());
+
+        for (int pessoa : usuarioCurtido.usuariosCurtidos){
+            if (pessoa == usuario.getId()){
+                usuario.matches.add(usuarioCurtido.getId());
+                usuarioCurtido.matches.add(usuario.getId());
+            }
+        }
+    }
+
+    public void descurtirUsuario(int id, int idUsuarioDescurtido) {
+        Usuario usuario = procurar(id);
+        Usuario usuarioCurtido = this.procurar(idUsuarioDescurtido);
+
+        usuario.usuariosCurtidos.removeIf(i -> i == usuarioCurtido.getId());
+
+        usuarioCurtido.matches.removeIf(i -> i == usuario.getId());
+        usuario.matches.removeIf(i -> i == usuarioCurtido.getId());
+    }
+
+    public List<Integer> listarMatches(int id) {
+        Usuario usuario = procurar(id);
+        return usuario.matches;
+    }
 }
 
 

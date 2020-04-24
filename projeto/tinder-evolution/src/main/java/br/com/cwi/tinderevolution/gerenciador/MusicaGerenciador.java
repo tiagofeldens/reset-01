@@ -13,17 +13,17 @@ public class MusicaGerenciador {
     public Musica salvar(Musica musica) {
         List<Musica> musicas = banco.listar();
 
-        if (musica.nome.isEmpty() || musica.autor.isEmpty() || musica.estilo == null || musica.dataLancamento == null) {
+        if (musica.getNome().isEmpty() || musica.getAutor().isEmpty() || musica.getEstilo() == null || musica.getDataLancamento() == null) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         }
 
         for (Musica musicaExistente : musicas) {
-            if (musica.nome.equals(musicaExistente.nome)) {
+            if (musica.getNome().equals(musicaExistente.getNome())) {
                 return musicaExistente;
             }
         }
-        if (musica.dataLancamento.isAfter(LocalDate.now())) {
+        if (musica.getDataLancamento().isAfter(LocalDate.now())) {
             return null;
         }
 
@@ -48,12 +48,12 @@ public class MusicaGerenciador {
             return null;
         }
 
-        if (musicaAtualizada.nome.isEmpty() || musicaAtualizada.autor.isEmpty() || musicaAtualizada.estilo == null || musicaAtualizada.dataLancamento == null) {
+        if (musicaAtualizada.getNome().isEmpty() || musicaAtualizada.getAutor().isEmpty() || musicaAtualizada.getEstilo() == null || musicaAtualizada.getDataLancamento() == null) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         } else {
             for (Musica musica : musicas) {
-                if (musicaAtualizada.nome.equals(musica.nome) && musicaAtualizada.id != musica.id) {
+                if (musicaAtualizada.getNome().equals(musica.getNome()) && musicaAtualizada.getId() != musica.getId()) {
                     return musicaExistente;
                 }
             }

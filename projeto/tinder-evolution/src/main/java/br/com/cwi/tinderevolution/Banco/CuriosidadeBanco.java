@@ -11,14 +11,14 @@ public class CuriosidadeBanco {
     final List<Curiosidade> curiosidades = new ArrayList<>();
 
     public Curiosidade salvar(Curiosidade curiosidade) {
-        curiosidade.id = contador++;
+        curiosidade.setId(contador++);
         curiosidades.add(curiosidade);
         return curiosidade;
     }
 
     public Curiosidade editar(Curiosidade curiosidadeExistente, Curiosidade curiosidadeEditada) {
-        curiosidadeExistente.descricao = curiosidadeEditada.descricao;
-        curiosidadeExistente.categoria = curiosidadeEditada.categoria;
+        curiosidadeExistente.setDescricao(curiosidadeEditada.getDescricao());
+        curiosidadeExistente.setCategoria(curiosidadeEditada.getCategoria());
         return curiosidadeExistente;
     }
 
@@ -28,7 +28,7 @@ public class CuriosidadeBanco {
 
     public Curiosidade procurar(int id) {
         for (Curiosidade curiosidade : curiosidades) {
-            if (curiosidade.id == id) {
+            if (curiosidade.getId() == id) {
                 return curiosidade;
             }
         }

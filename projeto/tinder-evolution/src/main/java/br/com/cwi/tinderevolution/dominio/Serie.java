@@ -4,14 +4,14 @@ import java.time.LocalDate;
 
 public class Serie {
 
-    public int id;
-    public String nome;
-    public String diretor;
-    public LocalDate dataLancamento;
-    public int numeroDeTemporadas;
-    public int numeroDeEpisodios;
-    public CategoriasSerie categoria;
-    public String sinopse;
+    private int id;
+    private String nome;
+    private String diretor;
+    private LocalDate dataLancamento;
+    private int numeroDeTemporadas;
+    private int numeroDeEpisodios;
+    private CategoriasSerie categoria;
+    private String sinopse;
 
     public Serie(String nome, String diretor, LocalDate dataLancamento, int numeroDeTemporadas, int numeroDeEpisodios, CategoriasSerie categoria, String sinopse) {
         this.nome = nome;
@@ -36,6 +36,70 @@ public class Serie {
                 ", categoria=" + categoria +
                 ", sinopse='" + sinopse + '\'' +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDiretor() {
+        return diretor;
+    }
+
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
+    }
+
+    public LocalDate getDataLancamento() {
+        return dataLancamento;
+    }
+
+    public void setDataLancamento(LocalDate dataLancamento) {
+        this.dataLancamento = dataLancamento;
+    }
+
+    public int getNumeroDeTemporadas() {
+        return numeroDeTemporadas;
+    }
+
+    public void setNumeroDeTemporadas(int numeroDeTemporadas) {
+        this.numeroDeTemporadas = numeroDeTemporadas;
+    }
+
+    public int getNumeroDeEpisodios() {
+        return numeroDeEpisodios;
+    }
+
+    public void setNumeroDeEpisodios(int numeroDeEpisodios) {
+        this.numeroDeEpisodios = numeroDeEpisodios;
+    }
+
+    public CategoriasSerie getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriasSerie categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
     }
 }
 

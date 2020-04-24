@@ -11,17 +11,17 @@ public class JogoBanco {
     final List<Jogo> jogos  = new ArrayList<>();
 
     public Jogo salvar(Jogo jogo) {
-        jogo.id = contador++;
+        jogo.setId(contador++);
         jogos.add(jogo);
         return jogo;
     }
 
     public Jogo editar(Jogo jogoExistente, Jogo jogoEditado) {
-        jogoExistente.nome = jogoEditado.nome;
-        jogoExistente.publisher = jogoEditado.publisher;
-        jogoExistente.dataLancamento = jogoEditado.dataLancamento;
-        jogoExistente.categoria = jogoEditado.categoria;
-        jogoExistente.plataforma = jogoEditado.plataforma;
+        jogoExistente.setNome(jogoEditado.getNome());
+        jogoExistente.setPublisher(jogoEditado.getPublisher());
+        jogoExistente.setDataLancamento(jogoEditado.getDataLancamento());
+        jogoExistente.setCategoria(jogoEditado.getCategoria());
+        jogoExistente.setPlataforma(jogoEditado.getPlataforma());
         return jogoExistente;
     }
 
@@ -31,7 +31,7 @@ public class JogoBanco {
 
     public Jogo procurar(int id) {
         for (Jogo jogo : jogos) {
-            if (jogo.id == id) {
+            if (jogo.getId() == id) {
                 return jogo;
             }
         }

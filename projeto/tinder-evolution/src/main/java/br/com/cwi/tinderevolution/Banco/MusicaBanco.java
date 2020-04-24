@@ -11,16 +11,16 @@ public class MusicaBanco {
     final List<Musica> musicas = new ArrayList<>();
 
     public Musica salvar(Musica musica) {
-        musica.id = contador++;
+        musica.setId(contador++);
         musicas.add(musica);
         return musica;
     }
 
     public Musica editar(Musica musicaExistente, Musica musicaEditada) {
-        musicaExistente.nome = musicaEditada.nome;
-        musicaExistente.autor = musicaEditada.autor;
-        musicaExistente.dataLancamento = musicaEditada.dataLancamento;
-        musicaExistente.estilo = musicaEditada.estilo;
+        musicaExistente.setNome(musicaEditada.getNome());
+        musicaExistente.setAutor(musicaEditada.getAutor());
+        musicaExistente.setDataLancamento(musicaEditada.getDataLancamento());
+        musicaExistente.setEstilo(musicaEditada.getEstilo());
         return musicaExistente;
     }
 
@@ -30,7 +30,7 @@ public class MusicaBanco {
 
     public Musica procurar(int id) {
         for (Musica musica : musicas) {
-            if (musica.id == id) {
+            if (musica.getId() == id) {
                 return musica;
             }
         }

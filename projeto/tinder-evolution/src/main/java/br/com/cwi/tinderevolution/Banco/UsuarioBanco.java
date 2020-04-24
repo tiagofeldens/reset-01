@@ -12,19 +12,19 @@ public class UsuarioBanco {
     final List<Usuario> usuarios = new ArrayList<>();
 
     public Usuario salvar(Usuario usuario) {
-        usuario.id = contador++;
+        usuario.setId(contador++);
         usuarios.add(usuario);
         return usuario;
     }
 
     public Usuario editar(Usuario usuarioExistente, Usuario usuarioEditado) {
-        usuarioExistente.nome = usuarioEditado.nome;
-        usuarioExistente.email = usuarioEditado.email;
-        usuarioExistente.telefone = usuarioEditado.telefone;
-        usuarioExistente.dataNascimento = usuarioEditado.dataNascimento;
-        usuarioExistente.bio = usuarioEditado.bio;
-        usuarioExistente.latitude = usuarioEditado.latitude;
-        usuarioExistente.longitude = usuarioEditado.longitude;
+        usuarioExistente.setNome(usuarioEditado.getNome());
+        usuarioExistente.setEmail(usuarioEditado.getEmail());
+        usuarioExistente.setTelefone(usuarioEditado.getTelefone());
+        usuarioExistente.setDataNascimento(usuarioEditado.getDataNascimento());
+        usuarioExistente.setBio(usuarioEditado.getBio());
+        usuarioExistente.setLatitude( usuarioEditado.getLatitude());;
+        usuarioExistente.setLongitude(usuarioEditado.getLongitude());
         return usuarioExistente;
     }
 
@@ -34,7 +34,7 @@ public class UsuarioBanco {
 
     public Usuario procurar(int id) {
         for (Usuario usuario : usuarios) {
-            if (usuario.id == id) {
+            if (usuario.getId() == id) {
                 return usuario;
             }
         }

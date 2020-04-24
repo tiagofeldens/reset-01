@@ -99,42 +99,63 @@ public class UsuarioRest {
         usuarioGerenciador.descurtirEsporte(id, idEsporte);
     }
 
+    //Like e Dislike de Usuário
+    @PostMapping("/{idUsuario}/likes/usuarios/{idUsuarioCurtido}")
+    public void curtirUsuario (@PathVariable("idUsuarioCurtido") int idUsuarioCurtido, @PathVariable("idUsuario") int id) {
+        usuarioGerenciador.curtirUsuario(id, idUsuarioCurtido);
+    }
+
+    @DeleteMapping("/{idUsuario}/likes/usuarios/{idUsuarioDescurtido}")
+    public void descurtirUsuario (@PathVariable("idUsuarioDescurtido") int idUsuarioDescurtido, @PathVariable("idUsuario") int id) {
+        usuarioGerenciador.descurtirUsuario(id, idUsuarioDescurtido);
+    }
+
     //LISTAR
     //Listar Curtidas
 
     @GetMapping("/{idUsuario}/likes/musicas")
-    public List<Musica> listarMusicasCurtidas (@PathVariable("idUsuario") int id) {
+    public List<Integer> listarMusicasCurtidas (@PathVariable("idUsuario") int id) {
         return usuarioGerenciador.listarMusicasCurtidas(id);
     }
 
     @GetMapping("/{idUsuario}/likes/filmes")
-    public List<Filme> listarFilmesCurtidos (@PathVariable("idUsuario") int id) {
+    public List<Integer> listarFilmesCurtidos (@PathVariable("idUsuario") int id) {
         return usuarioGerenciador.listarFilmesCurtidos(id);
     }
 
     @GetMapping("/{idUsuario}/likes/series")
-    public List<Serie> listarSeriesCurtidas (@PathVariable("idUsuario") int id) {
+    public List<Integer> listarSeriesCurtidas (@PathVariable("idUsuario") int id) {
         return usuarioGerenciador.listarSeriesCurtidas(id);
     }
 
     @GetMapping("/{idUsuario}/likes/jogos")
-    public List<Jogo> listarJogosCurtidas (@PathVariable("idUsuario") int id) {
+    public List<Integer> listarJogosCurtidas (@PathVariable("idUsuario") int id) {
         return usuarioGerenciador.listarJogosCurtidos(id);
     }
 
     @GetMapping("/{idUsuario}/likes/esportes")
-    public List<Esporte> listarEsportesCurtidos (@PathVariable("idUsuario") int id) {
+    public List<Integer> listarEsportesCurtidos (@PathVariable("idUsuario") int id) {
         return usuarioGerenciador.listarEsportesCurtidos(id);
     }
 
-    @GetMapping("/{idUsuario}/likes/curiosidades")
+
+    //Definir e Listar Curiosidades
+    @PostMapping("/{idUsuario}/curiosidades")
+    public void definirCuriosidade(@PathVariable("idUsuario") int id, @RequestBody Curiosidade curiosidade) {
+        usuarioGerenciador.definirCuriosidade(id, curiosidade);
+    }
+
+    @GetMapping("/{idUsuario}/curiosidades")
     public List<Curiosidade> listarCuriosidades (@PathVariable("idUsuario") int id) {
         return usuarioGerenciador.listarCuriosidades(id);
     }
 
+    //Listar Matches
+    @GetMapping("/{idUsuario}/matches")
+    public List<Integer> listarMatches (@PathVariable("idUsuario") int id) {
+        return usuarioGerenciador.listarMatches(id);
+    }
+
+
+
 }
-
-
-//    public void definirCuriosidade
-//    public List<Curiosidade> listarCuriosidades (int id){
-

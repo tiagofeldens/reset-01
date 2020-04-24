@@ -11,17 +11,17 @@ public class FilmeBanco {
     final List<Filme> filmes = new ArrayList<>();
 
     public Filme salvar(Filme filme) {
-        filme.id = contador++;
+        filme.setId(contador++);
         filmes.add(filme);
         return filme;
     }
 
     public Filme editar(Filme filmeExistente, Filme filmeEditado) {
-        filmeExistente.nome = filmeEditado.nome;
-        filmeExistente.autor = filmeEditado.autor;
-        filmeExistente.dataLancamento = filmeEditado.dataLancamento;
-        filmeExistente.categoria = filmeEditado.categoria;
-        filmeExistente.sinopse = filmeEditado.sinopse;
+        filmeExistente.setNome(filmeEditado.getNome());
+        filmeExistente.setAutor(filmeEditado.getAutor());
+        filmeExistente.setDataLancamento(filmeEditado.getDataLancamento());
+        filmeExistente.setCategoria(filmeEditado.getCategoria());
+        filmeExistente.setSinopse(filmeEditado.getSinopse());
         return filmeExistente;
     }
 
@@ -31,7 +31,7 @@ public class FilmeBanco {
 
     public Filme procurar(int id) {
         for (Filme filme : filmes) {
-            if (filme.id == id) {
+            if (filme.getId() == id) {
                 return filme;
             }
         }

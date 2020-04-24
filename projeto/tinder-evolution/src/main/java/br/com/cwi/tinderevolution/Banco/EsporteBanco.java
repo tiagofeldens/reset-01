@@ -11,13 +11,13 @@ public class EsporteBanco {
     final List<Esporte> esportes = new ArrayList<>();
 
     public Esporte salvar(Esporte esporte) {
-        esporte.id = contador++;
+        esporte.setId(contador++);
         esportes.add(esporte);
         return esporte;
     }
 
     public Esporte editar(Esporte esporteExistente, Esporte esporteEditado) {
-        esporteExistente.nome = esporteEditado.nome;
+        esporteExistente.setNome(esporteEditado.getNome());
         return esporteExistente;
     }
 
@@ -27,7 +27,7 @@ public class EsporteBanco {
 
     public Esporte procurar(int id) {
         for (Esporte esporte : esportes) {
-            if (esporte.id == id) {
+            if (esporte.getId() == id) {
                 return esporte;
             }
         }

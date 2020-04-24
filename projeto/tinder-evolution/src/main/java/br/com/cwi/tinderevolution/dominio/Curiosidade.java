@@ -3,9 +3,9 @@ package br.com.cwi.tinderevolution.dominio;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 public class Curiosidade {
-    public int id;
-    public String descricao;
-    public CategoriasCuriosidade categoria;
+    private int id;
+    private String descricao;
+    private CategoriasCuriosidade categoria;
 
     public Curiosidade(String descricao, CategoriasCuriosidade categoria) {
         this.descricao = descricao;
@@ -20,5 +20,29 @@ public class Curiosidade {
                 ", descricao='" + descricao + '\'' +
                 ", categoria=" + categoria +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public CategoriasCuriosidade getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriasCuriosidade categoria) {
+        this.categoria = categoria;
     }
 }

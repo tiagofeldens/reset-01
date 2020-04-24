@@ -16,17 +16,17 @@ public class JogoGerenciador {
     public Jogo salvar(Jogo jogo) {
         List<Jogo> jogos = banco.listar();
 
-        if (jogo.nome.isEmpty() || jogo.categoria == null || jogo.dataLancamento == null || jogo.plataforma == null) {
+        if (jogo.getNome().isEmpty() || jogo.getCategoria() == null || jogo.getDataLancamento() == null || jogo.getPlataforma() == null) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         }
 
         for (Jogo jogoExistente : jogos) {
-            if (jogo.nome.equals(jogoExistente.nome) && jogo.plataforma.equals(jogoExistente.plataforma)) {
+            if (jogo.getNome().equals(jogoExistente.getNome()) && jogo.getPlataforma().equals(jogoExistente.getPlataforma())) {
                 return jogoExistente;
             }
         }
-        if (jogo.dataLancamento.isAfter(LocalDate.now())) {
+        if (jogo.getDataLancamento().isAfter(LocalDate.now())) {
             return null;
         }
 
@@ -51,12 +51,12 @@ public class JogoGerenciador {
             return null;
         }
 
-        if (jogoAtualizado.nome.isEmpty() || jogoAtualizado.publisher.isEmpty() || jogoAtualizado.categoria == null || jogoAtualizado.dataLancamento == null || jogoAtualizado.plataforma == null) {
+        if (jogoAtualizado.getNome().isEmpty() || jogoAtualizado.getPublisher().isEmpty() || jogoAtualizado.getCategoria() == null || jogoAtualizado.getDataLancamento() == null || jogoAtualizado.getPlataforma() == null) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         } else {
             for (Jogo jogo : jogos) {
-                if (jogoAtualizado.nome.equals(jogo.nome) && jogoAtualizado.plataforma.equals(jogo.plataforma) && jogoAtualizado.id != jogo.id) {
+                if (jogoAtualizado.getNome().equals(jogo.getNome()) && jogoAtualizado.getPlataforma().equals(jogo.getPlataforma()) && jogoAtualizado.getId() != jogo.getId()) {
                     return jogoExistente;
                 }
             }

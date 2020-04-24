@@ -34,7 +34,7 @@ public class EsporteRest {
     }
 
     @PostMapping
-    public Esporte criar(@Validated @RequestBody Esporte novoEsporte) {
+    public Esporte criar(@RequestBody Esporte novoEsporte) {
         return esporteGerenciador.salvar(novoEsporte);
     }
 

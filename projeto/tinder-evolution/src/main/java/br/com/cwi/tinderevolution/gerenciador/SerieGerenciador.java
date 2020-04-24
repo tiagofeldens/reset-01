@@ -14,17 +14,17 @@ public class SerieGerenciador {
     public Serie salvar(Serie serie) {
         List<Serie> series = banco.listar();
 
-        if (serie.nome.isEmpty() || serie.diretor.isEmpty()|| serie.numeroDeEpisodios == 0 || serie.numeroDeTemporadas == 0 || serie.dataLancamento == null || serie.categoria == null || serie.sinopse.isEmpty()) {
+        if (serie.getNome().isEmpty() || serie.getDiretor().isEmpty()|| serie.getNumeroDeEpisodios() == 0 || serie.getNumeroDeTemporadas() == 0 || serie.getDataLancamento() == null || serie.getCategoria() == null || serie.getSinopse().isEmpty()) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         }
 
         for (Serie serieExistente : series) {
-            if (serie.nome.equals(serieExistente.nome)) {
+            if (serie.getNome().equals(serieExistente.getNome())) {
                 return serieExistente;
             }
         }
-        if (serie.dataLancamento.isAfter(LocalDate.now())) {
+        if (serie.getDataLancamento().isAfter(LocalDate.now())) {
             return null;
         }
 
@@ -49,12 +49,12 @@ public class SerieGerenciador {
             return null;
         }
 
-        if (serieAtualizada.nome.isEmpty() || serieAtualizada.diretor.isEmpty()|| serieAtualizada.numeroDeEpisodios == 0 || serieAtualizada.numeroDeTemporadas == 0 || serieAtualizada.dataLancamento == null || serieAtualizada.categoria == null || serieAtualizada.sinopse.isEmpty()) {
+        if (serieAtualizada.getNome().isEmpty() || serieAtualizada.getDiretor().isEmpty()|| serieAtualizada.getNumeroDeEpisodios() == 0 || serieAtualizada.getNumeroDeTemporadas() == 0 || serieAtualizada.getDataLancamento() == null || serieAtualizada.getCategoria() == null || serieAtualizada.getSinopse().isEmpty()) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         } else {
             for (Serie filme : series) {
-                if (serieAtualizada.nome.equals(filme.nome) && serieAtualizada.id != filme.id) {
+                if (serieAtualizada.getNome().equals(filme.getNome()) && serieAtualizada.getId() != filme.getId()) {
                     return serieExistente;
                 }
             }

@@ -11,16 +11,16 @@ public class SerieBanco {
     final List<Serie> series = new ArrayList<>();
 
     public Serie salvar(Serie serie) {
-        serie.id = contador++;
+        serie.setId(contador++);
         series.add(serie);
         return serie;
     }
 
     public Serie editar(Serie serieExistente, Serie serieEditada) {
-        serieExistente.nome = serieEditada.nome;
-        serieExistente.diretor = serieEditada.diretor;
-        serieExistente.dataLancamento = serieEditada.dataLancamento;
-        serieExistente.categoria = serieEditada.categoria;
+        serieExistente.setNome(serieEditada.getNome());
+        serieExistente.setDiretor(serieEditada.getDiretor());
+        serieExistente.setDataLancamento(serieEditada.getDataLancamento());
+        serieExistente.setCategoria(serieEditada.getCategoria());
         return serieExistente;
     }
 
@@ -30,7 +30,7 @@ public class SerieBanco {
 
     public Serie procurar(int id) {
         for (Serie serie : series) {
-            if (serie.id == id) {
+            if (serie.getId() == id) {
                 return serie;
             }
         }

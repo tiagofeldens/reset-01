@@ -1,7 +1,6 @@
 package br.com.cwi.tinderevolution.gerenciador;
 
 
-
 import br.com.cwi.tinderevolution.Banco.CuriosidadeBanco;
 import br.com.cwi.tinderevolution.dominio.Curiosidade;
 
@@ -16,16 +15,11 @@ public class CuriosidadeGerenciador {
     public Curiosidade salvar(Curiosidade curiosidade) {
         List<Curiosidade> curiosidades = banco.listar();
 
-        if (curiosidade.descricao.isEmpty() || curiosidade.categoria == null) {
+        if (curiosidade.getDescricao().isEmpty() || curiosidade.getCategoria() == null) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         }
 
-        for (Curiosidade curiosidadeExistente : curiosidades) {
-            if (curiosidade.descricao.equals(curiosidadeExistente.descricao)) {
-                return curiosidadeExistente;
-            }
-        }
         return banco.salvar(curiosidade);
     }
 
@@ -47,19 +41,13 @@ public class CuriosidadeGerenciador {
             return null;
         }
 
-        if (curiosidadeAtualizada.descricao.isEmpty() || curiosidadeAtualizada.categoria == null) {
-            System.out.println("Campos obrigatórios não foram preenchidos.");
+        if (curiosidadeAtualizada.getDescricao().isEmpty() || curiosidadeAtualizada.getCategoria() == null) {
             return null;
-        } else {
-            for (Curiosidade curiosidade : curiosidades) {
-                if (curiosidadeAtualizada.descricao.equals(curiosidade.descricao) && curiosidadeAtualizada.id != curiosidade.id) {
-                    return curiosidadeAtualizada;
-                }
-            }
-            return banco.editar(curiosidadeExistente, curiosidadeAtualizada);
-
         }
+        return banco.editar(curiosidadeExistente, curiosidadeAtualizada);
+
     }
+
 
     public boolean deletar(int id) {
         if (id > 0) {

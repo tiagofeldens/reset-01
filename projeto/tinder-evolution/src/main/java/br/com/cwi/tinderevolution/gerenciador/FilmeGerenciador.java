@@ -13,17 +13,17 @@ public class FilmeGerenciador {
     public Filme salvar(Filme filme) {
         List<Filme> filmes = banco.listar();
 
-        if (filme.nome.isEmpty() || filme.autor.isEmpty() || filme.categoria == null || filme.dataLancamento == null || filme.sinopse.isEmpty()) {
+        if (filme.getNome().isEmpty() || filme.getAutor().isEmpty() || filme.getCategoria() == null || filme.getDataLancamento() == null || filme.getSinopse().isEmpty()) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         }
 
         for (Filme filmeExistente : filmes) {
-            if (filme.nome.equals(filmeExistente.nome)) {
+            if (filme.getNome().equals(filmeExistente.getNome())) {
                 return filmeExistente;
             }
         }
-        if (filme.dataLancamento.isAfter(LocalDate.now())) {
+        if (filme.getDataLancamento().isAfter(LocalDate.now())) {
             return null;
         }
 
@@ -48,12 +48,12 @@ public class FilmeGerenciador {
             return null;
         }
 
-        if (filmeAtualizado.nome.isEmpty() || filmeAtualizado.autor.isEmpty() || filmeAtualizado.categoria == null || filmeAtualizado.dataLancamento == null || filmeAtualizado.sinopse.isEmpty()) {
+        if (filmeAtualizado.getNome().isEmpty() || filmeAtualizado.getAutor().isEmpty() || filmeAtualizado.getCategoria() == null || filmeAtualizado.getDataLancamento() == null || filmeAtualizado.getSinopse().isEmpty()) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         } else {
             for (Filme filme : filmes) {
-                if (filmeAtualizado.nome.equals(filme.nome) && filmeAtualizado.id != filme.id) {
+                if (filmeAtualizado.getNome().equals(filme.getNome()) && filmeAtualizado.getId() != filme.getId()) {
                     return filmeExistente;
                 }
             }

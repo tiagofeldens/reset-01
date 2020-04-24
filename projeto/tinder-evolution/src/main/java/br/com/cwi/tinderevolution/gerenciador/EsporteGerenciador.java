@@ -14,13 +14,13 @@ public class EsporteGerenciador {
     public Esporte salvar(Esporte esporte) {
         List<Esporte> esportes = banco.listar();
 
-        if (esporte.nome.isEmpty()) {
+        if (esporte.getNome().isEmpty()) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         }
 
         for (Esporte esporteExistente : esportes) {
-            if (esporte.nome.equals(esporteExistente.nome)) {
+            if (esporte.getNome().equals(esporteExistente.getNome())) {
                 return esporteExistente;
             }
         }
@@ -45,12 +45,12 @@ public class EsporteGerenciador {
             return null;
         }
 
-        if (esporteAtualizado.nome.isEmpty()) {
+        if (esporteAtualizado.getNome().isEmpty()) {
             System.out.println("Campos obrigatórios não foram preenchidos.");
             return null;
         } else {
             for (Esporte esporte : esportes) {
-                if (esporteAtualizado.nome.equals(esporte.nome) && esporteAtualizado.id != esporte.id) {
+                if (esporteAtualizado.getNome().equals(esporte.getNome()) && esporteAtualizado.getId() != esporte.getId()) {
                     return esporteExistente;
                 }
             }
